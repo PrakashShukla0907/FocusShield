@@ -1,0 +1,31 @@
+
+> focusshield@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 6 modules transformed.
+[31m✗[39m Build failed in 643ms
+[31merror during build:
+[31m[vite:esbuild] Transform failed with 1 error:
+E:/ALL Codes/web/FocusShield/src/App.jsx:109:36: ERROR: Syntax error "`"[31m
+file: [36mE:/ALL Codes/web/FocusShield/src/App.jsx:109:36[31m
+[33m
+[33mSyntax error "`"[33m
+107 |                      <div className="w-full bg-slate-900 rounded-full h-2 mt-2 overflow-hidden">
+108 |                        <div 
+109 |                          className={\`h-2 rounded-full \${isDanger ? 'bg-red-500' : 'bg-blue-500'}\`} 
+    |                                      ^
+110 |                          style={{ width: \`\${progress}%\` }}
+111 |                        ></div>
+[31m
+    at failureErrorWithLog (E:\ALL Codes\web\FocusShield\node_modules\esbuild\lib\main.js:1467:15)
+    at E:\ALL Codes\web\FocusShield\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (E:\ALL Codes\web\FocusShield\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (E:\ALL Codes\web\FocusShield\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (E:\ALL Codes\web\FocusShield\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)[39m

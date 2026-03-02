@@ -1,0 +1,95 @@
+#focusshield-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.85); /* Dark blue glass */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2147483647; /* Max z-index */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: white;
+  animation: fs-fadein 0.4s ease-out;
+}
+
+#focusshield-modal {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  max-width: 450px;
+  width: 90%;
+  animation: fs-slideup 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#focusshield-modal h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  color: #f1f5f9;
+  letter-spacing: -0.02em;
+}
+
+#focusshield-modal p {
+  font-size: 16px;
+  color: #94a3b8;
+  margin: 0 0 32px 0;
+  line-height: 1.5;
+}
+
+#focusshield-domain {
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+.fs-button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.fs-button:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.fs-button-outline {
+  background: transparent;
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.fs-button-outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
+}
+
+@keyframes fs-fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fs-slideup {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
