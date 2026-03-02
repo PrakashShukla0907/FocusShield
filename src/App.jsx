@@ -102,7 +102,7 @@ const App = () => {
     <div className="m-0 p-0 w-[350px] bg-white text-slate-900 font-sans shadow-2xl overflow-hidden min-h-[440px]">
       <div className="px-5 w-full h-[440px] overflow-y-auto custom-scrollbar pt-2 text-center block">
         
-        {/* Header Mockup */}
+        {/* Header */}
         <div className="relative z-10 w-full flex justify-center mb-0">
           <img src="/icons/icon_48x48.png" alt="FocusShield Logo" className="w-[56px] h-[56px] rounded-2xl shadow-sm block" />
         </div>
@@ -112,7 +112,7 @@ const App = () => {
 
         {currentDomain && (
           <>
-            {/* Current Site Usage Mockup */}
+            {/* Current Site Usage */}
             <div style={{ padding: 0, margin: 0 }}>
               <p className="text-[15px] text-black font-medium uppercase tracking-widest leading-none relative z-20" style={{ margin: 0, padding: 0, marginTop: '20px' }}>
                 Current Site
