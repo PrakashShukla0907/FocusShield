@@ -1,95 +1,183 @@
-#focusshield-overlay {
+/* ─────────────────────────────────────────────────────────────
+   FocusShield – Injected Content Styles
+   (limit overlay  +  intentionality check  +  night badge)
+   ───────────────────────────────────────────────────────────── */
+
+/* ── shared backdrop ───────────────────────── */
+#focusshield-overlay,
+#focusshield-check-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(15, 23, 42, 0.85); /* Dark blue glass */
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  z-index: 2147483647; /* Max z-index */
+  z-index: 2147483647;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  color: white;
-  animation: fs-fadein 0.4s ease-out;
+  color: #0f172a;
+  animation: fs-fadein 0.35s ease-out;
 }
 
-#focusshield-modal {
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px;
-  border-radius: 24px;
+/* ── modal card ─────────────────────────────── */
+#focusshield-modal,
+#focusshield-check-modal {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  padding: 44px 40px 36px;
+  border-radius: 28px;
   text-align: center;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  max-width: 450px;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+  max-width: 440px;
   width: 90%;
-  animation: fs-slideup 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fs-slideup 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#focusshield-modal h1 {
+/* ── emoji / icon ────────────────────────────── */
+.fs-emoji {
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+/* ── headings ───────────────────────────────── */
+#focusshield-modal h1,
+#focusshield-check-modal h1 {
   font-size: 28px;
-  font-weight: 700;
-  margin: 0 0 12px 0;
-  color: #f1f5f9;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: #000000;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
-#focusshield-modal p {
-  font-size: 16px;
-  color: #94a3b8;
-  margin: 0 0 32px 0;
-  line-height: 1.5;
+/* ── body text ──────────────────────────────── */
+#focusshield-modal p,
+#focusshield-check-modal p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 24px;
+  line-height: 1.6;
 }
 
+.fs-sub {
+  font-size: 13px !important;
+  color: #94a3b8 !important;
+  margin-bottom: 20px !important;
+}
+
+/* ── domain highlight ───────────────────────── */
 #focusshield-domain {
-  font-weight: 600;
-  color: #38bdf8;
+  font-weight: 700;
+  color: #6366f1; /* indigo-500 matching popup */
 }
 
+/* ── late-night badge ───────────────────────── */
+.fs-night-badge {
+  display: inline-block;
+  background: rgba(251, 191, 36, 0.12);
+  color: #b45309;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+/* ── typed-intent input ─────────────────────── */
+#fs-intent-input {
+  display: block;
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 13px 16px;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+#fs-intent-input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+#fs-intent-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* ── primary button ─────────────────────────── */
 .fs-button {
-  background: #3b82f6;
-  color: white;
+  display: block;
+  width: 100%;
+  background: #0f172a;
+  color: #ffffff;
   border: none;
   padding: 14px 28px;
   border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  width: 100%;
-  margin-bottom: 12px;
-}
-
-.fs-button:hover {
-  background: #2563eb;
-  transform: translateY(-1px);
-}
-
-.fs-button-outline {
-  background: transparent;
-  color: #94a3b8;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px 28px;
-  border-radius: 12px;
   font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.15s, transform 0.1s;
+  margin-bottom: 8px;
+}
+
+.fs-button:hover:not(:disabled) {
+  background: #1e293b;
+}
+
+.fs-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.fs-button:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── outline button ─────────────────────────── */
+.fs-button-outline {
+  display: block;
   width: 100%;
+  background: transparent;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 13px 28px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .fs-button-outline:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: #f1f5f9;
+  background: #f8fafc;
+  color: #475569;
+  border-color: #cbd5e1;
 }
 
+/* ── animations ─────────────────────────────── */
 @keyframes fs-fadein {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes fs-slideup {
-  from { opacity: 0; transform: translateY(20px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from { opacity: 0; transform: translateY(24px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)     scale(1);   }
 }
